@@ -1,0 +1,250 @@
+<head>
+
+    <style>
+
+        .navigationBlock{border: 1px solid black; width: 100%; height: 10%; background: white; display: flex;}
+            .titleNavigate{border: 1px solid black; width: 20%; text-align: center; padding-top: 1.5%;}
+            .titleColorNav
+            .navigation
+                .aboutUsNav
+                .directionNav
+                .ToursNav
+                .reviewNav
+                .contactNav
+
+        .openWorldBlock{border: 1px solid black; width: 100%; height: 70%; background-image: url(beach.jpg); position: relative;}
+            .linza{background-color: #00000067; position: absolute; width: 100%; height: 100%; color: white; z-index: 1;}
+            .title{color: rgb(255, 255, 255); font-size: 46px; text-align: center;
+                margin-top: 10%; position: relative; z-index: 2;}
+            .description{color: rgb(255, 255, 255); font-size: 20px; text-align: center;
+                margin-top: 3%; position: relative; z-index: 2;}
+            .takeTour{width: 8%; height: 8%; border-radius: 3em; background: rgb(255, 98, 98);
+                margin-left: 46%; margin-top: 2%; position: relative; z-index: 2; color: white; border: none; cursor: pointer;}
+
+        .aboutUsBlock{width: 100%; height: 80%; background: white;}
+                .titleAboutUs{margin-top: 4%; font-size: 40px; text-align: center;}
+                .titleDescAboutUs{width: 30%; margin-left: 7%; margin-top: 4%; 
+                    font-size: 24px; line-height: 1.2;} 
+                .descriptionAboutUs{width: 40%; margin-left: 7%; margin-top: 1%;
+                    font-size: 18px; color: rgb(67, 67, 67); line-height: 1.3;}
+                .photoAboutUs{width: 20%; height: 52%; position: absolute;
+                margin-left: 63%; margin-top: -19%; border-radius: 3%;}
+                .buttonAboutUs{width: 12%; height: 10%; border-radius: 3em; background: rgb(247, 109, 109); color: white;
+    margin-left: 7%; border: none; margin-top: 1%; font-size: 18px;}
+        .bestOfferBlock{border: 1px solid black; width: 100%; height: 70%; background: rgb(243, 251, 253);}
+        .bestDirectionsBlock{border: 1px solid black; width: 100%; height: 80%; background: white;}
+        .ourToursBlock{border: 1px solid black; width: 100%; height: 80%; background: rgb(243, 251, 253);}
+        .reviewBlock{border: 1px solid black; width: 100%; height: 70%; background: white;}
+        .momentsBlock{border: 1px solid black; width: 100%; height: 70%; background: rgb(243, 251, 253);}
+        .questionsBlock{border: 1px solid black; width: 100%; height: 80%; background: white;}
+        .contactBlock{border: 1px solid black; width: 100%; height: 80%; background: rgb(243, 251, 253);}
+        .blockTitle{text-align:center;margin-top:30px}
+        .row{display:flex;justify-content:center;gap:20px;margin-top:30px}
+        .card{width:250px;background:white;padding:15px;border-radius:10px}
+        .price{color:red;font-weight:bold}
+        .direction{width:200px;height:150px;background:#ccc;border-radius:10px;display:flex;align-items:center;justify-content:center}
+        .review{width:250px;background:white;padding:15px;border-radius:10px}
+        .gallery{display:grid;grid-template-columns:repeat(3,150px);justify-content:center;gap:10px;margin-top:30px}
+        .gallery div{height:120px;background:#ccc}
+        .faq{width:500px;margin:20px auto}
+        .faq-item{background:white;padding:10px;margin:10px;cursor:pointer}
+        .answer{display:none;margin-top:10px}
+        .contactRow{display:flex;justify-content:center;gap:40px;margin-top:30px}
+        .map{width:300px;height:200px;background:#ccc}
+
+
+        .footerBlock{border: 1px solid black; width: 100%; height: 20%; background: #333333;}
+
+        
+
+        .budapest{width: 100%; height: 100%;border-radius: 3%;}
+        .japan{width: 100%; height: 100%;border-radius: 3%;}
+
+        
+
+        .aboutUsBlock,
+        .bestOfferBlock,
+        .bestDirectionsBlock,
+        .ourToursBlock,
+        .reviewBlock,
+        .momentsBlock,
+        .questionsBlock,
+        .contactBlock {opacity: 0; transform: translateY(40px); transition: 0.7s;}
+        .show {opacity: 1 !important; transform: translateY(0) !important;}
+        button {transition: 0.3s;}
+        button:hover {transform: scale(1.05); background: #ff3b3b;}
+        .takeTour:hover {transform: scale(1.1);}
+        .photoAboutUs img {transition: 0.5s;}
+        .photoAboutUs img:hover {transform: scale(1.05);}
+        .navigation button {border: none; background: none; cursor: pointer; margin: 10px; transition: 0.3s;}
+        .navigation button:hover {color: red;}
+
+
+    </style>
+
+</head>
+
+<body>
+    <div class="navigationBlock">
+        <div class="titleNavigate"> <b>Travel</b><b class="titleColorNav">World</b> </div>
+        <div class="navigation">
+            <button class="aboutUsNav"> О нас </button>
+            <button class="directionNav"> Направления </button>
+            <button class="ToursNav"> Туры </button>
+            <button class="reviewNav"> Отзывы </button>
+            <button class="contactNav"> Контакты </button>
+        </div>
+    </div>
+
+    <div class="openWorldBlock"> 
+        <div class="linza"> </div>
+        <div class="title"> <b> Откройте мир с TravelWorld </b> </div>
+        <div class="description"> Путешествия, которые вы никогда не забудете </div>
+        <button class="takeTour"> Выбрать тур </button>
+    </div>
+
+    <div class="aboutUsBlock">
+        <div class="titleAboutUs"> <b> О нашем агенстве </b> </div>
+        <div class="titleDescAboutUs"> <b> Мы создаём незабываемые 
+                                            <br>
+                                            впечатления </b> </div>
+
+        <div class="DescriptionAboutUs">    TravelWorld - это команда профессиональных путешественников,
+                                            которая уже более 15 лет помогает людям открывать для себя новые
+                                            страны и культуры. Ты тщательно отбираем каждый тур и
+                                            направление, чтобы обеспечить вам максимальный комфорт и
+                                            безопасность во время путешествия.
+                                            <br>
+                                            <br> 
+                                            Наша философия - индивидуальный подход к каждому клиенту. Мы
+                                            не просто продаём туды, мы создаём уникальные маршруты, которые
+                                            соответствуют вашим интересам, бюджету и предпочтениям.
+        </div>
+        <div class="photoAboutUs"> <img src="C:\Users\user1\Documents\Учёба\Информатика\3 курс\Скорук\lab_5\japan.jpg" class="japan"> </div>
+        <button class="buttonAboutUs"> Связаться с нами </button>
+    </div>  
+
+    <div class="bestOfferBlock">
+        <h2 class="blockTitle">Лучшие предложения</h2>
+
+        <div class="row">
+            <div class="card">
+                <h3>Италия</h3>
+                <p>7 дней</p>
+                <p class="price">$1200</p>
+                <button>Подробнее</button>
+            </div>
+
+            <div class="card">
+                <h3>Турция</h3>
+                <p>5 дней</p>
+                <p class="price">$800</p>
+                <button>Подробнее</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="bestDirectionsBlock">
+        <h2 class="blockTitle">Популярные направления</h2>
+
+        <div class="row">
+            <div class="direction">Париж</div>
+            <div class="direction">Япония</div>
+            <div class="direction">США</div>
+        </div>
+    </div>
+
+    <div class="ourToursBlock">
+        <h2 class="blockTitle">Наши туры</h2>
+
+        <div class="row">
+            <div class="card">
+                <h3>Европа</h3>
+                <p>10 дней</p>
+                <button onclick="alert('Забронировано')">Забронировать</button>
+            </div>
+
+            <div class="card">
+                <h3>Азия</h3>
+                <p>8 дней</p>
+                <button onclick="alert('Забронировано')">Забронировать</button>
+            </div>
+        </div>
+
+    </div>
+    <div class="reviewBlock">
+        <h2 class="blockTitle">Отзывы</h2>
+
+        <div class="row">
+            <div class="review">Отличный сервис!</div>
+            <div class="review">Все понравилось!</div>
+        </div>
+    </div>
+
+    <div class="momentsBlock">
+        <h2 class="blockTitle">Наши моменты</h2>
+
+        <div class="gallery">
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+        </div>
+    </div>
+
+    <div class="questionsBlock">
+        <h2 class="blockTitle">Частые вопросы</h2>
+
+        <div class="faq">
+            <div class="faq-item" onclick="toggle(this)">
+                Как забронировать?
+                <div class="answer">Нажмите кнопку</div>
+            </div>
+
+            <div class="faq-item" onclick="toggle(this)">
+                Нужна ли виза?
+                <div class="answer">Зависит от страны</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contactBlock">
+        <h2 class="blockTitle">Контакты</h2>
+
+        <div class="contactRow">
+            <div>
+                <p><b>Город:</b> Москва</p>
+                <p><b>Телефон:</b> +7 999 123-45-67</p>
+                <p><b>Email:</b> info@travel.com</p>
+            </div>
+
+            <div class="map">Карта</div>
+        </div>
+    </div>
+
+    <script>
+    const blocks = document.querySelectorAll(
+    ".aboutUsBlock, .bestOfferBlock, .bestDirectionsBlock, .ourToursBlock, .reviewBlock, .momentsBlock, .questionsBlock, .contactBlock"
+    );
+
+    function showBlocks() {
+        const trigger = window.innerHeight * 0.85;
+
+        blocks.forEach(block => {
+            const top = block.getBoundingClientRect().top;
+
+            if (top < trigger) {
+                block.classList.add("show");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", showBlocks);
+    window.addEventListener("load", showBlocks);
+</script>
+
+</body>
+
+<footer>
+
+    <div class="footerBlock"></div>
+
+</footer>

@@ -1,0 +1,115 @@
+<label>Число: </label>
+<input type="number" id="numberInput" value="12321">
+<button onclick="testNumber()">Выполнить</button>
+
+<label>Цифра для подсчета: </label>
+<input type="number" id="digitInput" value="2">
+
+<h3>Результаты:</h3>
+<pre id="numberResults"></pre>
+
+<hr>
+
+<label>Строка: </label>
+<input type="text" id="stringInput" value="abacabad">
+<button onclick="testString()">Выполнить</button>
+
+<label>Длина случайной строки: </label>
+<input type="number" id="lengthInput" value="10">
+
+<h3>Результаты:</h3>
+<pre id="stringResults"></pre>
+
+    <script>
+        function reverse(n) {
+            return Number(n.toString().split("").reverse().join(""));
+        }
+
+        function noDupsNumber(n) {
+            return Number(Array.from(new Set(n.toString().split(""))).join(""));
+        }
+
+        function digitNumber(n, d) {
+            return Number(n.toString().split(d).length - 1);
+        }
+
+        function a(n) {
+            const bin = n.toString(2);
+            let maxZeros = 0;
+            let maxOnes = 0;
+            let currentZeros = 0;
+            let currentOnes = 0;
+
+            for (let char of bin) {
+                if (char === "0") {
+                    currentZeros++;
+                    currentOnes = 0;
+                } else {
+                    currentOnes++;
+                    currentZeros = 0;
+                }
+                maxZeros = Math.max(maxZeros, currentZeros);
+                maxOnes = Math.max(maxOnes, currentOnes);
+            }
+            return { bin, maxZeros, maxOnes };
+        }
+
+        function firstNoDups(str) {
+            for (let charOut of str) {
+                let num = 0;
+                for (let charIn of str) {
+                    if (charOut === charIn) num++;
+                }
+                if (num == 1) return charOut;
+            }
+            return str[0];
+        }
+
+        function randomizedString(n) {
+            const chars = "1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
+            let result = "";
+            for (let i = 0; i < n; i++) {
+                const randomIndex = Math.floor(Math.random() * chars.length);
+                result += chars[randomIndex];
+            }
+            return result;
+        }
+
+        function noDupsString(str) {
+            return Array.from(new Set(str.split(""))).join("");
+        }
+
+        function testNumber() {
+            const n = Number(document.getElementById('numberInput').value);
+            const d = Number(document.getElementById('digitInput').value);
+            
+            const binaryResult = a(n);
+            
+            const output = 
+                `Исходное число: ${n}\n` +
+                `reverse: ${reverse(n)}\n` +
+                `noDups (убрать повторы цифр): ${noDupsNumber(n)}\n` +
+                `digitNumber (цифра "${d}" встречается): ${digitNumber(n, d)} раз\n` +
+                `Двоичный вид: ${binaryResult.bin}\n` +
+                `Макс нулей подряд: ${binaryResult.maxZeros}\n` +
+                `Макс единиц подряд: ${binaryResult.maxOnes}`;
+            
+            document.getElementById('numberResults').textContent = output;
+        }
+
+        function testString() {
+            const str = document.getElementById('stringInput').value;
+            const len = Number(document.getElementById('lengthInput').value);
+            
+            const output = 
+                `Исходная строка: "${str}"\n` +
+                `firstNoDups (первый уникальный символ): "${firstNoDups(str)}"\n` +
+                `noDups (убрать повторы символов): "${noDupsString(str)}"\n` +
+                `randomizedString (случайная строка длиной ${len}): "${randomizedString(len)}"`;
+            
+            document.getElementById('stringResults').textContent = output;
+        }
+
+        testNumber();
+        testString();
+    </script>
